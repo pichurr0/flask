@@ -1,15 +1,16 @@
-from flask import Flask, jsonify
 import os
+from flask import Flask, jsonify
+
 
 app = Flask(__name__)
 
-
+@app.route('')
 @app.route('/')
 def index():
-    return jsonify({"amor mio":"Esta es la prueba de que la aplicacion puede ser desplegada y que tu la vez desde la casa te amo"})
+    return jsonify({"key":"value"})
 
 @app.route('/home')
-def index():
+def home():
     return 'home'
 
 if __name__ == '__main__':
