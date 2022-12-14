@@ -1,16 +1,12 @@
 import os
-from flask import Flask, jsonify
+from flask import Flask, make_response
 
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return jsonify({"key":"value"})
-
-@app.route('/home')
-def home():
-    return 'home'
+    return make_response({"key":"value"})
 
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
